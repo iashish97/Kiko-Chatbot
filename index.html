@@ -6,580 +6,8 @@
     <title>Mindful Therapy Center | Professional Psychological Support</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #2c5aa0;
-            --primary-light: #e8eff9;
-            --secondary: #6a8bc5;
-            --accent: #ffb347;
-            --light: #f9fafc;
-            --dark: #1a2b4d;
-            --text: #333333;
-            --text-light: #666666;
-            --success: #4caf50;
-            --border: #e1e5eb;
-            --shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            --radius: 8px;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background-color: var(--light);
-        }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Merriweather', serif;
-            font-weight: 600;
-            color: var(--dark);
-            margin-bottom: 1rem;
-        }
-        
-        h1 {
-            font-size: 2.8rem;
-            line-height: 1.2;
-        }
-        
-        h2 {
-            font-size: 2.2rem;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-        
-        h2:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background-color: var(--accent);
-        }
-        
-        h3 {
-            font-size: 1.5rem;
-        }
-        
-        p {
-            margin-bottom: 1rem;
-            color: var(--text-light);
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            background-color: var(--primary);
-            color: white;
-            border-radius: var(--radius);
-            text-decoration: none;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            background-color: var(--secondary);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow);
-        }
-        
-        .btn-accent {
-            background-color: var(--accent);
-        }
-        
-        .btn-accent:hover {
-            background-color: #ff9e1f;
-        }
-        
-        section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-title h2:after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        /* Header & Navigation */
-        header {
-            background-color: white;
-            box-shadow: var(--shadow);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo i {
-            margin-right: 8px;
-            color: var(--secondary);
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary);
-            cursor: pointer;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-light) 0%, #ffffff 100%);
-            padding-top: 140px;
-            padding-bottom: 100px;
-        }
-        
-        .hero-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        .hero-text {
-            flex: 1;
-            padding-right: 40px;
-        }
-        
-        .hero-image {
-            flex: 1;
-            text-align: center;
-        }
-        
-        .hero-image img {
-            max-width: 100%;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-        
-        /* Services Section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            background-color: white;
-            border-radius: var(--radius);
-            padding: 30px;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        /* About Section */
-        .about {
-            background-color: var(--primary-light);
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-image {
-            flex: 1;
-        }
-        
-        .about-image img {
-            width: 100%;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-        
-        /* Kiko Chatbot Preview */
-        .kiko-preview {
-            background-color: white;
-            border-radius: var(--radius);
-            padding: 30px;
-            box-shadow: var(--shadow);
-            margin-top: 40px;
-            border-left: 5px solid var(--accent);
-        }
-        
-        .kiko-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .kiko-avatar {
-            width: 60px;
-            height: 60px;
-            background-color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-        }
-        
-        .kiko-avatar i {
-            font-size: 1.8rem;
-            color: white;
-        }
-        
-        .kiko-info h3 {
-            margin-bottom: 5px;
-        }
-        
-        .kiko-status {
-            display: flex;
-            align-items: center;
-        }
-        
-        .status-indicator {
-            width: 10px;
-            height: 10px;
-            background-color: var(--success);
-            border-radius: 50%;
-            margin-right: 8px;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
-        
-        .kiko-demo {
-            background-color: #f5f7fb;
-            border-radius: var(--radius);
-            padding: 20px;
-            margin: 20px 0;
-            height: 200px;
-            overflow-y: auto;
-        }
-        
-        .message {
-            margin-bottom: 15px;
-            max-width: 80%;
-        }
-        
-        .kiko-message {
-            background-color: white;
-            padding: 12px 18px;
-            border-radius: 20px 20px 20px 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        
-        .user-message {
-            background-color: var(--primary);
-            color: white;
-            padding: 12px 18px;
-            border-radius: 20px 20px 5px 20px;
-            margin-left: auto;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        
-        .kiko-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .feature {
-            display: flex;
-            align-items: center;
-        }
-        
-        .feature i {
-            color: var(--accent);
-            margin-right: 10px;
-        }
-        
-        /* Team Section */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        
-        .team-member {
-            background-color: white;
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-        
-        .team-member:hover {
-            transform: translateY(-10px);
-        }
-        
-        .member-image {
-            height: 250px;
-            overflow: hidden;
-        }
-        
-        .member-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .team-member:hover .member-image img {
-            transform: scale(1.05);
-        }
-        
-        .member-info {
-            padding: 25px;
-        }
-        
-        /* Contact Section */
-        .contact {
-            background-color: var(--primary-light);
-        }
-        
-        .contact-container {
-            display: flex;
-            gap: 50px;
-        }
-        
-        .contact-info {
-            flex: 1;
-        }
-        
-        .contact-form {
-            flex: 1;
-            background-color: white;
-            padding: 30px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            font-family: 'Inter', sans-serif;
-            transition: border 0.3s ease;
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-        
-        .contact-details {
-            margin-top: 30px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .contact-item i {
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 60px 0 30px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-column h3 {
-            color: white;
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: #cccccc;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #aaaaaa;
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            h1 {
-                font-size: 2.4rem;
-            }
-            
-            h2 {
-                font-size: 2rem;
-            }
-            
-            .hero-content {
-                flex-direction: column;
-            }
-            
-            .hero-text {
-                padding-right: 0;
-                margin-bottom: 40px;
-            }
-            
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .contact-container {
-                flex-direction: column;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: 0;
-                background-color: white;
-                width: 100%;
-                flex-direction: column;
-                align-items: center;
-                padding: 20px 0;
-                box-shadow: var(--shadow);
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s ease;
-            }
-            
-            .nav-links.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-            }
-            
-            .nav-links li {
-                margin: 15px 0;
-            }
-            
-            section {
-                padding: 60px 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -611,13 +39,16 @@
                     <h1>Professional Psychological Support for Your Well-being</h1>
                     <p>At Mindful Therapy Center, we provide compassionate, evidence-based psychological care to help you navigate life's challenges and achieve mental wellness.</p>
                     <p>We're also developing <strong>Kiko</strong>, an AI chatbot that provides immediate support for those in need of someone to talk to.</p>
-                    <div style="margin-top: 30px;">
+                    <div class="hero-buttons">
                         <a href="#contact" class="btn">Book a Session</a>
-                        <a href="#kiko" class="btn btn-accent" style="margin-left: 15px;">Meet Kiko</a>
+                        <a href="#kiko" class="btn btn-accent">Meet Kiko</a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Therapist and client having a conversation">
+                    <div class="image-placeholder">
+                        <i class="fas fa-comments"></i>
+                        <p>Therapist and client conversation</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -696,10 +127,13 @@
                     <p>Founded in 2010, Mindful Therapy Center has been dedicated to providing exceptional psychological care to our community. Our team of licensed psychologists brings together diverse expertise and a shared commitment to evidence-based practice.</p>
                     <p>We believe in creating a safe, non-judgmental space where clients can explore their thoughts, feelings, and behaviors. Our approach is collaborative, empowering you to make meaningful changes in your life.</p>
                     <p>We're constantly innovating to make mental health support more accessible. That's why we're developing <strong>Kiko</strong> - an AI-powered chatbot designed to provide immediate, compassionate support to those in need of someone to talk to, available 24/7.</p>
-                    <a href="#team" class="btn" style="margin-top: 20px;">Meet Our Team</a>
+                    <a href="#team" class="btn about-btn">Meet Our Team</a>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80" alt="Therapist in office">
+                    <div class="image-placeholder">
+                        <i class="fas fa-couch"></i>
+                        <p>Therapist office setting</p>
+                    </div>
                 </div>
             </div>
             
@@ -759,7 +193,7 @@
                     </div>
                 </div>
                 
-                <button class="btn btn-accent" style="margin-top: 20px;" id="notifyBtn">Notify Me When Kiko Launches</button>
+                <button class="btn btn-accent kiko-notify-btn" id="notifyBtn">Notify Me When Kiko Launches</button>
             </div>
         </div>
     </section>
@@ -775,33 +209,39 @@
             <div class="team-grid">
                 <div class="team-member">
                     <div class="member-image">
-                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Dr. Sarah Johnson">
+                        <div class="image-placeholder">
+                            <i class="fas fa-user-md"></i>
+                        </div>
                     </div>
                     <div class="member-info">
                         <h3>Dr. Sarah Johnson</h3>
-                        <p>Clinical Psychologist</p>
+                        <p class="member-title">Clinical Psychologist</p>
                         <p>Specializes in anxiety disorders, CBT, and mindfulness-based therapies. 15+ years of experience.</p>
                     </div>
                 </div>
                 
                 <div class="team-member">
                     <div class="member-image">
-                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Dr. Michael Chen">
+                        <div class="image-placeholder">
+                            <i class="fas fa-user-md"></i>
+                        </div>
                     </div>
                     <div class="member-info">
                         <h3>Dr. Michael Chen</h3>
-                        <p>Clinical Psychologist</p>
+                        <p class="member-title">Clinical Psychologist</p>
                         <p>Expert in depression, trauma, and family systems therapy. PhD from Stanford University.</p>
                     </div>
                 </div>
                 
                 <div class="team-member">
                     <div class="member-image">
-                        <img src="https://images.unsplash.com/photo-1594824434340-7e7dfc37cabb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Dr. Elena Rodriguez">
+                        <div class="image-placeholder">
+                            <i class="fas fa-user-md"></i>
+                        </div>
                     </div>
                     <div class="member-info">
                         <h3>Dr. Elena Rodriguez</h3>
-                        <p>Counseling Psychologist</p>
+                        <p class="member-title">Counseling Psychologist</p>
                         <p>Focuses on relationship issues, life transitions, and multicultural counseling. Bilingual in Spanish.</p>
                     </div>
                 </div>
@@ -892,7 +332,7 @@
                             <textarea id="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
                         </div>
                         
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="submit" class="btn contact-submit-btn">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -906,11 +346,11 @@
                 <div class="footer-column">
                     <h3>Mindful Therapy Center</h3>
                     <p>Providing compassionate, evidence-based psychological care for over a decade. Your mental health is our priority.</p>
-                    <div style="margin-top: 20px;">
-                        <a href="#" style="color: white; margin-right: 15px; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
-                        <a href="#" style="color: white; margin-right: 15px; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
-                        <a href="#" style="color: white; margin-right: 15px; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 
@@ -953,78 +393,6 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Contact form submission
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const service = document.getElementById('service').value;
-            
-            // In a real application, you would send this data to a server
-            // For this demo, we'll just show an alert
-            alert(`Thank you ${name}! Your message has been sent. We will contact you soon regarding ${service ? 'your interest in ' + service : 'your inquiry'}.`);
-            
-            // Reset form
-            contactForm.reset();
-        });
-        
-        // Kiko notification button
-        const notifyBtn = document.getElementById('notifyBtn');
-        notifyBtn.addEventListener('click', function() {
-            const email = prompt('Please enter your email to be notified when Kiko launches:');
-            if(email) {
-                alert(`Thank you! We'll notify you at ${email} when Kiko is available.`);
-            }
-        });
-        
-        // Add a simple typing effect to the Kiko demo
-        const kikoDemo = document.querySelector('.kiko-demo');
-        const originalContent = kikoDemo.innerHTML;
-        
-        // Reset to original after 10 seconds to create a dynamic effect
-        setInterval(() => {
-            kikoDemo.innerHTML = originalContent;
-        }, 10000);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
